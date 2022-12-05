@@ -10,5 +10,9 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 build
+build_dynamic_md
+build_dynamic_mt
+build_static_md
+build_static_mt
 scripts
 settings.json
