@@ -1,10 +1,10 @@
 #ifndef UTILS_LIB_INCLUDE_UTILS_SERIALIZE_DESERIALIZER_H_
 #define UTILS_LIB_INCLUDE_UTILS_SERIALIZE_DESERIALIZER_H_
 
+#include <boost/endian/conversion.hpp>
 #include <cstdint>
 #include <string>
 #include <vector>
-#include <boost/endian/conversion.hpp>
 
 namespace wh {
 namespace utils {
@@ -56,7 +56,7 @@ class Deserializer final {
   size_t pos_;
 };
 
-}
+}  // namespace utils
 }  // namespace wh
 
 #endif  // UTILS_LIB_INCLUDE_UTILS_SERIALIZE_DESERIALIZER_H_

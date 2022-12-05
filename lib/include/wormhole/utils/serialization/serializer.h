@@ -26,8 +26,7 @@ class Serializer final {
     return *this;
   }
 
-  template <class Container,
-            std::enable_if_t<!std::is_pod_v<Container>, bool> = true,
+  template <class Container, std::enable_if_t<!std::is_pod_v<Container>, bool> = true,
             std::enable_if_t<utils::is_iterable_v<Container>, bool> = true>
   Serializer& Serialize(const Container& container) {
     using Value = typename Container::value_type;
@@ -68,6 +67,6 @@ Serializer& operator&(Serializer& s, std::shared_ptr<T> value) {
 }
 
 }  // namespace utils
-}
+}  // namespace wh
 
 #endif  // UTILS_LIB_INCLUDE_UTILS_SERIALIZE_SERIALIZER_H_

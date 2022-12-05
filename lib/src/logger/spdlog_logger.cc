@@ -39,9 +39,7 @@ class Logger::Pimpl {
 
   void SetLevel(LogLevel level) { logger_->set_level(ToSpdlogLevel(level)); }
 
-  void Log(LogLevel level, const std::string_view message) {
-    logger_->log(ToSpdlogLevel(level), message);
-  }
+  void Log(LogLevel level, const std::string_view message) { logger_->log(ToSpdlogLevel(level), message); }
 
  private:
   std::shared_ptr<spdlog::logger> logger_;
@@ -57,39 +55,27 @@ Logger::~Logger() {}
 
 //------------------------------------------------------------------------------
 
-void Logger::Trace(const std::string_view message) {
-  pimpl_->Log(LogLevel::Trace, message);
-}
+void Logger::Trace(const std::string_view message) { pimpl_->Log(LogLevel::Trace, message); }
 
 //------------------------------------------------------------------------------
 
-void Logger::Debug(const std::string_view message) {
-  pimpl_->Log(LogLevel::Debug, message);
-}
+void Logger::Debug(const std::string_view message) { pimpl_->Log(LogLevel::Debug, message); }
 
 //------------------------------------------------------------------------------
 
-void Logger::Info(const std::string_view message) {
-  pimpl_->Log(LogLevel::Info, message);
-}
+void Logger::Info(const std::string_view message) { pimpl_->Log(LogLevel::Info, message); }
 
 //------------------------------------------------------------------------------
 
-void Logger::Warning(const std::string_view message) {
-  pimpl_->Log(LogLevel::Warning, message);
-}
+void Logger::Warning(const std::string_view message) { pimpl_->Log(LogLevel::Warning, message); }
 
 //------------------------------------------------------------------------------
 
-void Logger::Error(const std::string_view message) {
-  pimpl_->Log(LogLevel::Error, message);
-}
+void Logger::Error(const std::string_view message) { pimpl_->Log(LogLevel::Error, message); }
 
 //------------------------------------------------------------------------------
 
-void Logger::Fatal(const std::string_view message) {
-  pimpl_->Log(LogLevel::Fatal, message);
-}
+void Logger::Fatal(const std::string_view message) { pimpl_->Log(LogLevel::Fatal, message); }
 
 //------------------------------------------------------------------------------
 

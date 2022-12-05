@@ -5,9 +5,9 @@
 
 #include <string_view>
 
-#include "wormhole/utils/logger/level.h"
-#include "wormhole/utils/logger/ilogger.h"
 #include "wormhole/utils/fast_pimpl.h"
+#include "wormhole/utils/logger/ilogger.h"
+#include "wormhole/utils/logger/level.h"
 
 namespace wh {
 namespace utils {
@@ -32,6 +32,6 @@ class Logger : public ILogger {
 };
 
 }  // namespace utils
-}
+}  // namespace wh
 
 #endif  // UTILS_LIB_INCLUDE_UTILS_LOGGER_LOGGER_H_

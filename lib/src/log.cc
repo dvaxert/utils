@@ -1,5 +1,5 @@
-#include "wormhole/utils/logger/spdlog_logger.h"
 #include "wormhole/utils/log.h"
+#include "wormhole/utils/logger/spdlog_logger.h"
 
 namespace wh {
 namespace utils {
@@ -10,4 +10,4 @@ std::shared_ptr<wh::utils::ILogger> LoggerSingleton() {
 }
 
 }  // namespace utils
-}  // namespac wh
+}  // namespace wh

@@ -5,9 +5,7 @@
 namespace wh {
 namespace utils {
 
-std::vector<uint8_t> Serializer::Data() const {
-  return {data_.begin(), data_.begin() + size_};
-}
+std::vector<uint8_t> Serializer::Data() const { return {data_.begin(), data_.begin() + size_}; }
 
 //------------------------------------------------------------------------------
 

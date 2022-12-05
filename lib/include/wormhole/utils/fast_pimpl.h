@@ -40,8 +40,7 @@ class FastPimpl {
   template <std::size_t ActualSize, std::size_t ActualAlignment>
   static void validate() noexcept {
     static_assert(Size == ActualSize, "Size and sizeof(T) mismatch");
-    static_assert(Alignment == ActualAlignment,
-                  "Alignment and alignof(T) mismatch");
+    static_assert(Alignment == ActualAlignment, "Alignment and alignof(T) mismatch");
   }
 
   T* Ptr() noexcept { return reinterpret_cast<T*>(&data_); }

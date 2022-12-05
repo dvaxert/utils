@@ -2,13 +2,13 @@
 #define UTILS_LIB_INCLUDE_UTILS_LOG_H_
 
 #include <fmt/format.h>
-#include <boost/preprocessor.hpp>
 
+#include <boost/preprocessor.hpp>
 #include <sstream>
 
-#include "wormhole/utils/logger/level.h"
-#include "wormhole/utils/logger/ilogger.h"
 #include "wormhole/utils/defer_call.h"
+#include "wormhole/utils/logger/ilogger.h"
+#include "wormhole/utils/logger/level.h"
 
 #ifndef UTILS_DISABLE_LOG
 
@@ -16,8 +16,7 @@
  * @brief Set the logging level
  * @param level { Trace, Debug, Info, Warning, Error, Fatal }
  */
-#define SET_LOG_LEVEL(level) \
-  wh::utils::LoggerSingleton()->SetLevel(wh::utils::LogLevel::level);
+#define SET_LOG_LEVEL(level) wh::utils::LoggerSingleton()->SetLevel(wh::utils::LogLevel::level);
 
 /**
  * @brief Sending a message
@@ -33,22 +32,18 @@
 /**
  * @brief Notification of entering and exiting the function
  */
-#define TRACE_LOG()                                          \
-  wh::utils::LoggerSingleton()->Trace(                            \
-      fmt::format("enter {}()", GET_FUNCTION_NAME()));       \
-  DEFER_CALL(&wh::utils::ILogger::Trace, wh::utils::LoggerSingleton(), \
-             fmt::format("exit {}()", GET_FUNCTION_NAME()));
+#define TRACE_LOG()                                                                    \
+  wh::utils::LoggerSingleton()->Trace(fmt::format("enter {}()", GET_FUNCTION_NAME())); \
+  DEFER_CALL(&wh::utils::ILogger::Trace, wh::utils::LoggerSingleton(), fmt::format("exit {}()", GET_FUNCTION_NAME()));
 
 /**
  * @brief Message about entering and exiting a function with information about
  *        the arguments passed at the call
  */
-#define TRACE_LOG_P(...)                                     \
-  wh::utils::LoggerSingleton()->Trace(                            \
-      fmt::format("enter {}()", GET_FUNCTION_NAME()));       \
-  LOG_PARAMS(__VA_ARGS__)                                    \
-  DEFER_CALL(&wh::utils::ILogger::Trace, wh::utils::LoggerSingleton(), \
-             fmt::format("exit {}()", GET_FUNCTION_NAME()));
+#define TRACE_LOG_P(...)                                                               \
+  wh::utils::LoggerSingleton()->Trace(fmt::format("enter {}()", GET_FUNCTION_NAME())); \
+  LOG_PARAMS(__VA_ARGS__)                                                              \
+  DEFER_CALL(&wh::utils::ILogger::Trace, wh::utils::LoggerSingleton(), fmt::format("exit {}()", GET_FUNCTION_NAME()));
 
 #define GET_FUNCTION_NAME() __func__
 
@@ -59,15 +54,14 @@
  * streams
  */
 #define PRINT_PARAM(r, data, elem) data << "\t" #elem " = " << elem << "\n";
-#define LOG_PARAMS(...)                                            \
-  {                                                                \
-    std::ostringstream tmp{};                                      \
-    tmp << GET_FUNCTION_NAME() << " call arguments:\n";            \
-    BOOST_PP_LIST_FOR_EACH(PRINT_PARAM, tmp,                       \
-                           BOOST_PP_VARIADIC_TO_LIST(__VA_ARGS__)) \
-    std::string res = tmp.str();                                   \
-    res.pop_back();                                                \
-    LOG_TRACE(res);                                                \
+#define LOG_PARAMS(...)                                                              \
+  {                                                                                  \
+    std::ostringstream tmp{};                                                        \
+    tmp << GET_FUNCTION_NAME() << " call arguments:\n";                              \
+    BOOST_PP_LIST_FOR_EACH(PRINT_PARAM, tmp, BOOST_PP_VARIADIC_TO_LIST(__VA_ARGS__)) \
+    std::string res = tmp.str();                                                     \
+    res.pop_back();                                                                  \
+    LOG_TRACE(res);                                                                  \
   }
 
 namespace wh {
@@ -78,7 +72,7 @@ namespace utils {
 std::shared_ptr<wh::utils::ILogger> LoggerSingleton();
 
 }  // namespace utils
-}  // namespace utils
+}  // namespace wh
 
 #else  // UTILS_DISABLE_LOG
 

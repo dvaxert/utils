@@ -9,11 +9,9 @@ class has_begin {
  private:
   template <typename C>
   static constexpr bool test(
-      typename std::enable_if<
-          std::is_same<decltype(static_cast<typename C::const_iterator (C::*)()
-                                                const>(&C::begin)),
-                       typename C::const_iterator (C::*)() const>::value,
-          void>::type*) {
+      typename std::enable_if<std::is_same<decltype(static_cast<typename C::const_iterator (C::*)() const>(&C::begin)),
+                                           typename C::const_iterator (C::*)() const>::value,
+                              void>::type*) {
     return true;
   }
 
@@ -33,11 +31,9 @@ class has_end {
  private:
   template <typename C>
   static constexpr bool test(
-      typename std::enable_if<
-          std::is_same<decltype(static_cast<typename C::const_iterator (C::*)()
-                                                const>(&C::end)),
-                       typename C::const_iterator (C::*)() const>::value,
-          void>::type*) {
+      typename std::enable_if<std::is_same<decltype(static_cast<typename C::const_iterator (C::*)() const>(&C::end)),
+                                           typename C::const_iterator (C::*)() const>::value,
+                              void>::type*) {
     return true;
   }
 

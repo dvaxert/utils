@@ -5,8 +5,7 @@
 namespace wh {
 namespace utils {
 
-Deserializer::Deserializer(std::vector<uint8_t> raw_data)
-    : data_(std::move(raw_data)), pos_(0) {}
+Deserializer::Deserializer(std::vector<uint8_t> raw_data) : data_(std::move(raw_data)), pos_(0) {}
 
 //------------------------------------------------------------------------------
 
