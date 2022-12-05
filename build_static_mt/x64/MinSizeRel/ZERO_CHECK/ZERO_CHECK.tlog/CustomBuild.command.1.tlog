@@ -1,0 +1,10 @@
+^C:\DEV\UTILS\BUILD_STATIC_MT\CMAKEFILES\132364936D109A8EF29E4DF25359EA73\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/dev/utils -BC:/dev/utils/build_static_mt --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/dev/utils/build_static_mt/utils.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

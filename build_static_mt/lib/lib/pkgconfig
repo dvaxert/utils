@@ -1,0 +1,10 @@
+prefix=C:/Program Files/utils
+exec_prefix=C:/Program Files/utils
+libdir=
+includedir=
+
+Name: utils
+Description: Utils for wormhole project
+Version: 
+Libs: -L${libdir} -l
+Cflags: -I${includedir}

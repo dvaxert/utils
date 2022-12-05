@@ -1,0 +1,5 @@
+C:/dev/utils/build_dynamic_md/lib/utils.dir/MinSizeRel/spdlog_logger.obj
+C:/dev/utils/build_dynamic_md/lib/utils.dir/MinSizeRel/deserializer.obj
+C:/dev/utils/build_dynamic_md/lib/utils.dir/MinSizeRel/serializer.obj
+C:/dev/utils/build_dynamic_md/lib/utils.dir/MinSizeRel/condition_variable.obj
+C:/dev/utils/build_dynamic_md/lib/utils.dir/MinSizeRel/log.obj

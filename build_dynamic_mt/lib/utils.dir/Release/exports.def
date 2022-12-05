@@ -1,0 +1,68 @@
+EXPORTS 
+	??_R0?AV?$_Ref_count_obj2@VLogger@utils@wh@@@std@@@8 	 DATA
+	??_R0?AVILogger@utils@wh@@@8 	 DATA
+	??_R0?AVLogger@utils@wh@@@8 	 DATA
+	??_R0?AV_Ref_count_base@std@@@8 	 DATA
+	??_R0?AVbad_alloc@std@@@8 	 DATA
+	??_R0?AVbad_array_new_length@std@@@8 	 DATA
+	??_R0?AVexception@std@@@8 	 DATA
+	??_R0?AVruntime_error@std@@@8 	 DATA
+	??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPEAX_K@Z
+	??$_Atomic_address_as@DU?$_Atomic_padded@_N@std@@@std@@YAPECDAEAU?$_Atomic_padded@_N@0@@Z
+	??$_Atomic_address_as@DU?$_Atomic_padded@_N@std@@@std@@YAPEDDAEBU?$_Atomic_padded@_N@0@@Z
+	??$_Atomic_reinterpret_as@D_N@std@@YADAEB_N@Z
+	??$_Copy_memmove@PEBEPEAE@std@@YAPEAEPEBE0PEAE@Z
+	??$_To_absolute_time@_JU?$ratio@$00$0DOI@@std@@@std@@YA?A_PAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@0@@Z
+	??$_To_xtime_10_day_clamped@_JU?$ratio@$00$0DLJKMKAA@@std@@@std@@YA_NAEAUxtime@@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@0@@Z
+	??$_Wait_until1@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@V?$_Binder@U_Unforced@std@@P8ConditionVariable@utils@wh@@EBA_NXZPEAV345@@3@@condition_variable@std@@AEAA_NAEAV?$unique_lock@Vmutex@std@@@1@AEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@1@AEAV?$_Binder@U_Unforced@std@@P8ConditionVariable@utils@wh@@EBA_NXZPEAV345@@1@@Z
+	??0Deserializer@utils@wh@@QEAA@V?$vector@EV?$allocator@E@std@@@std@@@Z
+	??0Logger@utils@wh@@QEAA@XZ
+	??0bad_alloc@std@@QEAA@AEBV01@@Z
+	??0bad_array_new_length@std@@QEAA@AEBV01@@Z
+	??0bad_array_new_length@std@@QEAA@XZ
+	??0exception@std@@QEAA@AEBV01@@Z
+	??0runtime_error@std@@QEAA@AEBV01@@Z
+	??0runtime_error@std@@QEAA@PEBD@Z
+	??1?$_Ref_count_obj2@VLogger@utils@wh@@@std@@UEAA@XZ
+	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ
+	??1?$shared_ptr@Vlogger@spdlog@@@std@@QEAA@XZ
+	??1?$unique_lock@Vmutex@std@@@std@@QEAA@XZ
+	??1ILogger@utils@wh@@UEAA@XZ
+	??1Logger@utils@wh@@UEAA@XZ
+	??1_Ref_count_base@std@@UEAA@XZ
+	??1bad_array_new_length@std@@UEAA@XZ
+	??1exception@std@@UEAA@XZ
+	??1runtime_error@std@@UEAA@XZ
+	??BConditionVariable@utils@wh@@QEBA_NXZ
+	?AlignData@Serializer@utils@wh@@QEAAX_K@Z
+	?CheckSize@Deserializer@utils@wh@@AEBAX_K@Z
+	?CheckSize@Serializer@utils@wh@@AEBAX_K@Z
+	?Clean@Serializer@utils@wh@@QEAAXXZ
+	?Data@Serializer@utils@wh@@QEBA?AV?$vector@EV?$allocator@E@std@@@std@@XZ
+	?Debug@Logger@utils@wh@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+	?Error@Logger@utils@wh@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+	?Fatal@Logger@utils@wh@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+	?Get@ConditionVariable@utils@wh@@QEBA_NXZ
+	?GetString@Deserializer@utils@wh@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@Z
+	?HasData@Deserializer@utils@wh@@QEBA_NXZ
+	?Info@Logger@utils@wh@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+	?LoggerSingleton@utils@wh@@YA?AV?$shared_ptr@VILogger@utils@wh@@@std@@XZ
+	?NextPos@Serializer@utils@wh@@AEAAPEAEXZ
+	?Notify@ConditionVariable@utils@wh@@QEAAXXZ
+	?Pop@Deserializer@utils@wh@@QEAAX_K@Z
+	?Reset@ConditionVariable@utils@wh@@QEAAXXZ
+	?SetLevel@Logger@utils@wh@@UEAAXW4LogLevel@23@@Z
+	?SetLevel@Pimpl@Logger@utils@wh@@QEAAXW4LogLevel@34@@Z
+	?ToSpdlogLevel@utils@wh@@YA?AW4level_enum@level@spdlog@@W4LogLevel@12@@Z
+	?Trace@Logger@utils@wh@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+	?UpdatePos@Deserializer@utils@wh@@AEAAX_K@Z
+	?WaitFor@ConditionVariable@utils@wh@@QEAA_N_K@Z
+	?Warning@Logger@utils@wh@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+	?_Delete_this@?$_Ref_count_obj2@VLogger@utils@wh@@@std@@EEAAXXZ
+	?_Destroy@?$_Ref_count_obj2@VLogger@utils@wh@@@std@@EEAAXXZ
+	?_Get_deleter@_Ref_count_base@std@@UEBAPEAXAEBVtype_info@@@Z
+	?_Throw_bad_array_new_length@std@@YAXXZ
+	?_Xlen_string@std@@YAXXZ
+	?_Xlength@?$vector@EV?$allocator@E@std@@@std@@CAXXZ
+	?allocate@?$allocator@D@std@@QEAAPEAD_K@Z
+	?what@exception@std@@UEBAPEBDXZ

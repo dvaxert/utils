@@ -1,2 +1,63 @@
-# utils
-utils for my projects
+# Utils
+A subproject with different utilities used in the modules of the [wormhole](https://github.com/dvaxert/wormhole) project.
+
+# How to build
+
+## Required
+* C++17
+* [CMake](https://cmake.org/)
+* [Boost](https://www.boost.org/) (Preprocessor, Endian)
+* [Spdlog](https://github.com/gabime/spdlog)
+* [Fmt](https://github.com/fmtlib/fmt) (Included in spdlog)
+* [Doxygen](https://doxygen.nl/) - optional
+
+## CMake options
+
+* **UTILS_BUILD_SHARED_LIBS** or **BUILD_SHARED_LIBS** - Build the project as a dynamic library
+* **UTILS_BUILD_TESTING** or **BUILD_TESTING** - Build tests for the project
+* **UTILS_INSTALL** - Generate a target for project installation
+* **UTILS_BUILD_EXAMPLE** - Build examples for a project
+* **UTILS_GENERATE_DOCUMENTATION** - Generate documentation when building a project
+* **UTILS_PEDANTIC** - Enable the display of additional warnings
+* **UTILS_WERROR** - Handle all compiler warnings with errors
+* **UTILS_MSVC_STATIC_RUNTIME** - Link static runtime libraries
+
+## Typical building
+
+In the project directory, call the commands:
+```
+$ git clone https://github.com/dvaxert/utils
+$ cmake -S . -B ./build
+$ cmake --build ./build --config Release
+```
+
+## Run tests
+
+In the project directory, call the commands:
+```
+$ cd ./build
+$ ctest -C Release -VV
+```
+
+## Install
+
+In the project directory, call the commands:
+```
+$ cmake --install ./build --prefix /my/install/prefix --config Release
+```
+
+## How to use in your project
+
+The previously installed library can be found as follows:
+
+```cmake
+find_package(Wormhole CONFIG REQUIRED utils)
+```
+
+Link to your application purpose **wh::utils** as follows:
+```cmake
+target_link_libraries(<your_target>
+    PRIVATE
+        wh::utils
+)
+```

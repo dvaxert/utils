@@ -1,0 +1,5 @@
+C:/dev/utils/build_dynamic_md/lib/utils.dir/Debug/spdlog_logger.obj
+C:/dev/utils/build_dynamic_md/lib/utils.dir/Debug/deserializer.obj
+C:/dev/utils/build_dynamic_md/lib/utils.dir/Debug/serializer.obj
+C:/dev/utils/build_dynamic_md/lib/utils.dir/Debug/condition_variable.obj
+C:/dev/utils/build_dynamic_md/lib/utils.dir/Debug/log.obj
