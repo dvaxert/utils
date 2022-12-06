@@ -51,7 +51,16 @@ $ cmake --install ./build --prefix /my/install/prefix --config Release
 The previously installed library can be found as follows:
 
 ```cmake
-find_package(Wormhole CONFIG REQUIRED utils)
+find_package(utils CONFIG REQUIRED)
+```
+
+set the path to the directory with cmake
+```cmake
+set(utils_DIR <install_prefix>/lib/cmake/utils)
+```
+or pass the parameter when generating the project
+```
+-Dutils_DIR=<install_prefix>/lib/cmake/utils
 ```
 
 Link to your application purpose **wh::utils** as follows:
