@@ -1,5 +1,5 @@
 name: windows-tests
-run_name: windows-tests
+run_name: some run name
 on: push
 jobs:
   shedule:
