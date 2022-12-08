@@ -1,8 +1,6 @@
 #ifndef UTILS_LIB_INCLUDE_UTILS_LOG_H_
 #define UTILS_LIB_INCLUDE_UTILS_LOG_H_
 
-#include <fmt/format.h>
-
 #include <boost/preprocessor.hpp>
 #include <sstream>
 
@@ -40,10 +38,10 @@
  * @brief Message about entering and exiting a function with information about
  *        the arguments passed at the call
  */
-#define TRACE_LOG_P(...)                                                               \
-  wh::utils::LoggerSingleton()->Trace(fmt::format("enter {}()", GET_FUNCTION_NAME())); \
-  LOG_PARAMS(__VA_ARGS__)                                                              \
-  DEFER_CALL(&wh::utils::ILogger::Trace, wh::utils::LoggerSingleton(), fmt::format("exit {}()", GET_FUNCTION_NAME()));
+#define TRACE_LOG_P(...)                                                    \
+  wh::utils::LoggerSingleton()->Trace("enter "  GET_FUNCTION_NAME() "()")); \
+  LOG_PARAMS(__VA_ARGS__)                                                   \
+  DEFER_CALL(&wh::utils::ILogger::Trace, wh::utils::LoggerSingleton(), "exit " GET_FUNCTION_NAME() "()");
 
 #define GET_FUNCTION_NAME() __func__
 
@@ -51,7 +49,7 @@
  * @brief Message displaying the arguments of the function call
  *
  * @warning The passed parameters must have the << operator to work with std
- * streams
+ *          streams
  */
 #define PRINT_PARAM(r, data, elem) data << "\t" #elem " = " << elem << "\n";
 #define LOG_PARAMS(...)                                                              \

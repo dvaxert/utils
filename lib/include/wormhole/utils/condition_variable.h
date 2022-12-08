@@ -2,6 +2,7 @@
 #define UTILS_LIB_INCLUDE_UTILS_CONDITION_VARIABLE_H_
 
 #include <atomic>
+#include <chrono>
 #include <condition_variable>
 #include <cstdint>
 #include <mutex>
@@ -15,9 +16,11 @@ class ConditionVariable {
   ~ConditionVariable() = default;
 
   bool Get() const;
-  bool WaitFor(uint64_t timeout_ms);
   void Notify();
   void Reset();
+
+  bool WaitFor(const std::chrono::milliseconds& timeout);
+  bool WaitUntil(const std::chrono::system_clock::time_point& deadline);
 
   operator bool() const;
 
