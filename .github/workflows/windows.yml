@@ -1,0 +1,42 @@
+name: windows
+run_name: windows
+on: push
+jobs:
+  runs-on: windows-latest
+  strategy:
+    matrix:
+      include:
+        - vcpkgCommitId: '253704407ae68efa37bf8f5b59b3e06dd40d3d3f'
+        - cmakeConfigPreset: [ windows-x64-shared-md-vcpkg ]
+        - cmakeBuildPreset: [ build-debug, build-release ]
+  steps: 
+    - name: Checkout
+      uses: actions/checkout@v3
+    
+    - name: Install CMake.
+      uses: lukka/get-cmake@latest
+    
+    - name: Restore artifacts, or setup vcpkg (do not install any package)
+      uses: lukka/run-vcpkg@v10
+      id: runvcpkg
+      with:
+          vcpkgDirectory: '${{ runner.workspace }}/b/vcpkg'
+          vcpkgGitCommitId: '${{ matrix.vcpkgCommitId }}'
+          vcpkgJsonGlob: '**/vcpkg.json'
+
+    - name: Run CMake consuming CMakePreset.json and vcpkg.json by mean of vcpkg.
+      uses: lukka/run-cmake@v10
+      with:
+        configurePreset: ${{ matrix.cmakeConfigPreset }}
+        buildPreset: ${{ matrix.cmakePreset }}
+
+    - name: Configure CMake
+      # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
+      # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
+      run: cmake -S ${{github.workspace}} -B ${{github.workspace}}/build 
+
+      with: 
+          buildPreset: ninja-multi-vcpkg
+      
+  env:
+    VCPKG_DEFAULT_TRIPLET: x64-windows

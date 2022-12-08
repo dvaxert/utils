@@ -17,3 +17,5 @@ build_static_mt
 scripts
 settings.json
 todo.md
+.vscode
+CMakeUserPresets.json
