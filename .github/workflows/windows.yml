@@ -1,5 +1,5 @@
-name: windows
-run_name: windows
+name: windows-tests
+run_name: windows-tests
 on: push
 jobs:
   shedule:
