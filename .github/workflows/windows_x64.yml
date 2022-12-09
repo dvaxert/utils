@@ -5,11 +5,10 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        include:
-          vcpkgCommitId: 'fd1bdf6ad343e390a5d043b23f0022b3188b5ac2'
-          buildShared: [ ON, OFF ]
-          msvcStaticRuntime: [ ON, OFF ]
-          architecture: [ x86, x64 ]
+        vcpkgCommitId: 'fd1bdf6ad343e390a5d043b23f0022b3188b5ac2'
+        buildShared: [ ON, OFF ]
+        msvcStaticRuntime: [ ON, OFF ]
+        architecture: [ x86, x64 ]
     steps: 
       - name: Checkout
         uses: actions/checkout@v3
