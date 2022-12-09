@@ -1,7 +1,5 @@
 name: windows-tests
-on: 
-  push:
-    branches: master
+on: push
 jobs:
   WindowsX64:
     runs-on: windows-latest
