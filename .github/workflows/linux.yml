@@ -1,15 +1,14 @@
-name: Windows x64
+name: Linux
 on: push
 jobs:
-  WindowsX64:
-    runs-on: windows-latest
+  Linux:
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
         buildShared: [ 'ON', 'OFF' ]
-        msvcStaticRuntime: [ 'ON', 'OFF' ]
-
-    name: Windows x64 shared=${{matrix.buildShared}} msvcStaticRuntime=${{matrix.msvcStaticRuntime}}
+        
+    name: Linux shared=${{matrix.buildShared}}
     
     steps: 
       - name: Checkout
@@ -25,7 +24,7 @@ jobs:
           vcpkgDirectory: '${{github.workspace}}/vcpkg'
           vcpkgGitCommitId: 'fd1bdf6ad343e390a5d043b23f0022b3188b5ac2'
           vcpkgJsonGlob: '**/vcpkg.json'
-
+          
       - name: Configure CMake
         run: 'cmake -S ${{github.workspace}} -B ${{github.workspace}}/build -A x64 
           -DUTILS_BUILD_SHARED_LIBS=${{matrix.buildShared}} 
@@ -35,9 +34,8 @@ jobs:
           -DUTILS_GENERATE_DOCUMENTATION=OFF 
           -DUTILS_PEDANTIC=ON 
           -DUTILS_WERROR=ON 
-          -DUTILS_MSVC_STATIC_RUNTIME=${{matrix.msvcStaticRuntime}} 
           -DCMAKE_TOOLCHAIN_FILE=${{github.workspace}}/vcpkg/scripts/buildsystems/vcpkg.cmake'
-
+          
       - name: Build Debug
         run: 'cmake --build ${{github.workspace}}/build --config Debug'
         
@@ -51,4 +49,3 @@ jobs:
       - name: Test Release
         working-directory: ${{github.workspace}}/build
         run: ctest -C Release -VV
-        
