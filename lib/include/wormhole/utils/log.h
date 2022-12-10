@@ -3,6 +3,7 @@
 
 #include <boost/preprocessor.hpp>
 #include <sstream>
+#include <memory>
 
 #include "wormhole/utils/defer_call.h"
 #include "wormhole/utils/logger/ilogger.h"
