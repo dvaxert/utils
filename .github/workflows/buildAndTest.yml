@@ -1,11 +1,20 @@
 name: Build and Test Library
-on: push
+on: 
+  push:
+    branches: [ master ]
 jobs:
   job:
     strategy:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
         buildShared: [ 'ON', 'OFF' ]
+        include:
+          - os: windows-latest
+            generator: '-G "Visual Studio 2022" -A x64'
+          - os: ubuntu-latest
+            generator: '-G "Ninja"'
+          - os: macos-latest
+            generator: ''
 
     runs-on: ${{matrix.os}}
 
@@ -25,7 +34,7 @@ jobs:
           vcpkgJsonGlob: '**/vcpkg.json'
 
       - name: Configure CMake
-        run: 'cmake -S ${{github.workspace}} -B ${{github.workspace}}/build -A x64 
+        run: 'cmake -S ${{github.workspace}} -B ${{github.workspace}}/build ${{matrix.generator}}
           -DUTILS_BUILD_SHARED_LIBS=${{matrix.buildShared}} 
           -DUTILS_BUILD_TESTING=ON 
           -DUTILS_INSTALL=OFF 
