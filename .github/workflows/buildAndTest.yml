@@ -6,12 +6,6 @@ jobs:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
         buildShared: [ 'ON', 'OFF' ]
-        msvcStaticRuntime: [ 'ON', 'OFF' ]
-        exclude:
-          - os: ubuntu-latest
-            msvcStaticRuntime: 'ON'
-          - os: macos-latest
-            msvcStaticRuntime: 'ON'
 
     runs-on: ${{matrix.os}}
 
@@ -39,7 +33,6 @@ jobs:
           -DUTILS_GENERATE_DOCUMENTATION=OFF 
           -DUTILS_PEDANTIC=ON 
           -DUTILS_WERROR=ON 
-          -DUTILS_MSVC_STATIC_RUNTIME=${{matrix.msvcStaticRuntime}} 
           -DCMAKE_TOOLCHAIN_FILE=${{github.workspace}}/vcpkg/scripts/buildsystems/vcpkg.cmake'
 
       - name: Build Debug
