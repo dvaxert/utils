@@ -1,5 +1,4 @@
-name: MacOS
-
+name: Linux
 on:
   push:
     branches:
@@ -9,15 +8,11 @@ on:
     branches:
       - master
       - develop
-
 jobs:
   job:
-    runs-on: macos-latest
-    strategy:
-      matrix:
-        buildShared: [ 'ON', 'OFF' ]
+    runs-on: ubuntu-latest
 
-    name: MacOs buildShared=${{matrix.buildShared}}
+    name: Linux X64 buildShared=${{matrix.buildShared}}
 
     steps: 
       - name: Checkout
@@ -35,28 +30,16 @@ jobs:
           vcpkgJsonGlob: '**/vcpkg.json'
 
       - name: Configure CMake
-        run: 'cmake -S ${{github.workspace}} -B ${{github.workspace}}/build -G "Ninja"
+        run: 'cmake -S ${{github.workspace}} -B ${{github.workspace}}/build -G "Ninja" 
           -DUTILS_BUILD_SHARED_LIBS=${{matrix.buildShared}} 
           -DUTILS_BUILD_TESTING=ON 
           -DUTILS_INSTALL=OFF 
           -DUTILS_BUILD_EXAMPLE=OFF 
           -DUTILS_GENERATE_DOCUMENTATION=OFF 
-          -DUTILS_PEDANTIC=ON 
-          -DUTILS_WERROR=ON 
-          -DUTILS_ENABLE_COVERAGE=OFF
+          -DUTILS_PEDANTIC=OFF 
+          -DUTILS_WERROR=OFF 
+          -DUTILS_ENABLE_COVERAGE=OFF 
           -DCMAKE_TOOLCHAIN_FILE=${{github.workspace}}/vcpkg/scripts/buildsystems/vcpkg.cmake'
 
-      - name: Build Debug
-        run: 'cmake --build ${{github.workspace}}/build --config Debug'
-        
-      - name: Build Release
-        run: 'cmake --build ${{github.workspace}}/build --config Release'
-        
-      - name: Test Debug
-        working-directory: ${{github.workspace}}/build
-        run: ctest -C Debug -VV
-        
-      - name: Test Release
-        working-directory: ${{github.workspace}}/build
-        run: ctest -C Release -VV
-        
+      - name: Coverage
+        uses: codecov/codecov-action@v3

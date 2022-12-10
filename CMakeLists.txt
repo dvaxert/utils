@@ -31,6 +31,7 @@ option (UTILS_GENERATE_DOCUMENTATION "Generate documentation when building a pro
 option (UTILS_PEDANTIC "Enable the display of additional warnings" OFF)
 option (UTILS_WERROR "Handle all compiler warnings with errors" OFF)
 option (UTILS_MSVC_STATIC_RUNTIME "Link static runtime libraries" OFF)
+option (UTILS_ENABLE_COVERAGE "Run coverage" OFF)
 
 message (STATUS "UTILS_BUILD_SHARED_LIBS - ${UTILS_BUILD_SHARED_LIBS}")
 message (STATUS "UTILS_BUILD_TESTING - ${UTILS_BUILD_TESTING}")
@@ -84,6 +85,13 @@ if (WIN32)
         string (APPEND CMAKE_RELEASE_POSTFIX "_md")
     endif ()
     message (STATUS "UTILS_MSVC_STATIC_RUNTIME - ${UTILS_MSVC_STATIC_RUNTIME}")
+endif ()
+
+# Enable coverage
+
+if (UTILS_ENABLE_COVERAGE)
+  set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage")
+  set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0")
 endif ()
 
 # Adding subdirectories to the project
