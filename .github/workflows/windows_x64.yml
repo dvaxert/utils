@@ -1,24 +1,15 @@
 name: windows-tests
 on: push
 jobs:
-  Windows:
+  WindowsX64:
     runs-on: windows-latest
 
     strategy:
       matrix:
-        buildType: [ 'static', 'shared' ]
-        msvcRuntime: [ 'MD', 'MT' ]
+        buildShared: [ 'ON', 'OFF' ]
+        msvcStaticRuntime: [ 'ON', 'OFF' ]
 
-    env:
-      if: ${{matrix.buildType == 'static'}}
-        buildSharedLibs: OFF
-      if: ${{matrix.buildType == 'shared'}}
-        buildSharedLibs: ON
-      if: ${{matrix.msvcRuntime == 'MD'}}
-        msvcStaticRuntime: OFF
-      if: ${{matrix.msvcRuntime == 'MT'}}
-        msvcStaticRuntime: ON
-
+    name: Windows x64 shared=${{matrix.buildShared}} msvcStaticRuntime=${{matrix.msvcStaticRuntime}}
     steps: 
       - name: Checkout
         uses: actions/checkout@v3
@@ -36,14 +27,14 @@ jobs:
 
       - name: Configure CMake
         run: 'cmake -S ${{github.workspace}} -B ${{github.workspace}}/build -A x64 
-          -DUTILS_BUILD_SHARED_LIBS=${{env.buildSharedLibs}} 
+          -DUTILS_BUILD_SHARED_LIBS=${{matrix.buildShared}} 
           -DUTILS_BUILD_TESTING=ON 
           -DUTILS_INSTALL=OFF 
           -DUTILS_BUILD_EXAMPLE=OFF 
           -DUTILS_GENERATE_DOCUMENTATION=OFF 
           -DUTILS_PEDANTIC=ON 
           -DUTILS_WERROR=ON 
-          -DUTILS_MSVC_STATIC_RUNTIME=${{env.msvcStaticRuntime}} 
+          -DUTILS_MSVC_STATIC_RUNTIME=${{matrix.msvcStaticRuntime}} 
           -DCMAKE_TOOLCHAIN_FILE=${{github.workspace}}/vcpkg/scripts/buildsystems/vcpkg.cmake'
 
       - name: Build Debug
