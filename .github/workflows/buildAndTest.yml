@@ -1,7 +1,5 @@
 name: Build and Test Library
-on: 
-  push:
-    branches: [ master ]
+on: push
 jobs:
   job:
     strategy:
