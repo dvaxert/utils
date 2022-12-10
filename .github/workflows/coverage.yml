@@ -41,5 +41,13 @@ jobs:
           -DUTILS_ENABLE_COVERAGE=OFF 
           -DCMAKE_TOOLCHAIN_FILE=${{github.workspace}}/vcpkg/scripts/buildsystems/vcpkg.cmake'
 
+      - name: Build Debug
+        run: 'cmake --build ${{github.workspace}}/build --config Debug'
+        
+      - name: Test Debug
+        working-directory: ${{github.workspace}}/build
+        run: ctest -C Debug -VV
+        
       - name: Coverage
         uses: codecov/codecov-action@v3
+          working-directory: ${{github.workspace}}
