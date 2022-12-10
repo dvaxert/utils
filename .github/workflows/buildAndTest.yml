@@ -12,12 +12,6 @@ jobs:
           - os: windows-latest
             msvcStaticRuntime: [ 'ON', 'OFF' ]
 
-    if: ${{matrix.os == windows-latest}}
-      name: ${{matrix.os}} shared=${{buildShared}} msvcStaticRuntime=${{matrix.msvcStaticRuntime}}
-      
-    if: ${{matrix.os != windows-latest}}
-      name: ${{matrix.os}} shared=${{buildShared}}
-
     steps: 
       - name: Checkout
         uses: actions/checkout@v3
