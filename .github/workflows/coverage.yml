@@ -51,5 +51,6 @@ jobs:
       - name: Coverage
         uses: codecov/codecov-action@v3
         with:
-          working-directory: ${{github.workspace}}
+          token: ${{ secrets.CODECOV_TOKEN }}
           gcov: true
+          path_to_write_report: ${{github.workspace}}/coverage
