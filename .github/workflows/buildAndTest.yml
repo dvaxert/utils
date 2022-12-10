@@ -2,17 +2,18 @@ name: Build and Test Library
 on: push
 jobs:
   job:
-    runs-on: ${{matrix.os}}
-
     strategy:
       matrix:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
         buildShared: [ 'ON', 'OFF' ]
         msvcStaticRuntime: [ 'ON', 'OFF' ]
         exclude:
-          - os: [ ubuntu-latest, macos-latest ]
+          - os: ubuntu-latest
+            msvcStaticRuntime: 'ON'
+          - os: macos-latest
             msvcStaticRuntime: 'ON'
 
+    runs-on: ${{matrix.os}}
 
     steps: 
       - name: Checkout
