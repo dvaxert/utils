@@ -1,4 +1,4 @@
-name: Linux
+name: Coverage
 on:
   push:
     branches:
@@ -12,7 +12,7 @@ jobs:
   job:
     runs-on: ubuntu-latest
 
-    name: Linux X64 buildShared=${{matrix.buildShared}}
+    name: Coverage
 
     steps: 
       - name: Checkout
