@@ -1,3 +1,5 @@
+[![Build and Test Library](https://github.com/dvaxert/utils/actions/workflows/buildAndTest.yml/badge.svg?branch=master)](https://github.com/dvaxert/utils/actions/workflows/buildAndTest.yml)
+
 # Utils
 A subproject with different utilities used in the modules of the [wormhole](https://github.com/dvaxert/wormhole) project.
 
