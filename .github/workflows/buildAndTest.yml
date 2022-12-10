@@ -10,10 +10,8 @@ jobs:
         buildShared: [ 'ON', 'OFF' ]
         msvcStaticRuntime: [ 'ON', 'OFF' ]
         exclude:
-          - os: ubuntu-latest
-            msvcStaticRuntime: [ 'ON', 'OFF' ]
-          - os: macos-latest
-            msvcStaticRuntime: [ 'ON', 'OFF' ]
+          - os: [ ubuntu-latest, macos-latest ]
+            msvcStaticRuntime: 'ON'
 
 
     steps: 
