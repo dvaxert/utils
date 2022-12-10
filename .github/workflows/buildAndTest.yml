@@ -1,8 +1,8 @@
 name: Windows x64
 on: push
 jobs:
-  WindowsX64:
-    runs-on: windows-latest
+  job:
+    runs-on: ${{matrix.os}}
 
     strategy:
       matrix:
