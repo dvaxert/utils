@@ -86,16 +86,13 @@ if (WIN32)
     message (STATUS "UTILS_MSVC_STATIC_RUNTIME - ${UTILS_MSVC_STATIC_RUNTIME}")
 endif ()
 
-if (UTILS_BUILD_TESTING)
-    include (CTest)
-    enable_testing ()
-endif ()
-
 # Adding subdirectories to the project
 
 add_subdirectory (lib)
 
 if (UTILS_BUILD_TESTING)
+    include (CTest)
+    enable_testing ()
     add_subdirectory (test)
 endif ()
 
