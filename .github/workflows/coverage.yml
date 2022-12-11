@@ -18,6 +18,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Instal Gcovr
+        run: |
+          pip install gcovr
+
       - name: Install CMake
         uses: lukka/get-cmake@latest
       
@@ -48,9 +52,12 @@ jobs:
         working-directory: ${{github.workspace}}/build
         run: ctest -C Debug -VV
 
-      - name: Coverage
+      - name: Generate reports
+        run: |
+          gcovr --root ${{github.workspace}} --html --html-details --output coverage.html
+
+      - name: Send reports
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           gcov: true
-          gcov_include: ${{github.workspace}}/lib
