@@ -18,39 +18,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       
-      - name: Install CMake.
-        uses: lukka/get-cmake@latest
-      
-      - name: Restore artifacts, or setup vcpkg (do not install any package)
-        uses: lukka/run-vcpkg@v10
-        id: runvcpkg
-        with:
-          vcpkgDirectory: '${{github.workspace}}/vcpkg'
-          vcpkgGitCommitId: 'fd1bdf6ad343e390a5d043b23f0022b3188b5ac2'
-          vcpkgJsonGlob: '**/vcpkg.json'
+      - name: Install programs
+        run: |
+          sudo apt install gcov
 
-      - name: Configure CMake
-        run: 'cmake -S ${{github.workspace}} -B ${{github.workspace}}/build -G "Ninja" 
-          -DUTILS_BUILD_SHARED_LIBS=${{matrix.buildShared}} 
-          -DUTILS_BUILD_TESTING=ON 
-          -DUTILS_INSTALL=OFF 
-          -DUTILS_BUILD_EXAMPLE=OFF 
-          -DUTILS_GENERATE_DOCUMENTATION=OFF 
-          -DUTILS_PEDANTIC=OFF 
-          -DUTILS_WERROR=OFF 
-          -DUTILS_ENABLE_COVERAGE=OFF 
-          -DCMAKE_TOOLCHAIN_FILE=${{github.workspace}}/vcpkg/scripts/buildsystems/vcpkg.cmake'
-
-      - name: Build Debug
-        run: 'cmake --build ${{github.workspace}}/build --config Debug'
-        
-      - name: Test Debug
-        working-directory: ${{github.workspace}}/build
-        run: ctest -C Debug -VV
-        
       - name: Coverage
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           gcov: true
-          path_to_write_report: ${{github.workspace}}/coverage
