@@ -31,6 +31,8 @@ option (UTILS_GENERATE_DOCUMENTATION "Generate documentation when building a pro
 option (UTILS_PEDANTIC "Enable the display of additional warnings" OFF)
 option (UTILS_WERROR "Handle all compiler warnings with errors" OFF)
 option (UTILS_MSVC_STATIC_RUNTIME "Link static runtime libraries" OFF)
+option (UTILS_ENABLE_COVERAGE "Run coverage" OFF)
+option (UTILS_ENABLE_SANITIZERS "Run static analysis" OFF)
 
 message (STATUS "UTILS_BUILD_SHARED_LIBS - ${UTILS_BUILD_SHARED_LIBS}")
 message (STATUS "UTILS_BUILD_TESTING - ${UTILS_BUILD_TESTING}")
@@ -39,6 +41,8 @@ message (STATUS "UTILS_BUILD_EXAMPLE - ${UTILS_BUILD_EXAMPLE}")
 message (STATUS "UTILS_GENERATE_DOCUMENTATION - ${UTILS_GENERATE_DOCUMENTATION}")
 message (STATUS "UTILS_PEDANTIC - ${UTILS_PEDANTIC}")
 message (STATUS "UTILS_WERROR - ${UTILS_WERROR}")
+message (STATUS "UTILS_ENABLE_COVERAGE - ${UTILS_ENABLE_COVERAGE}")
+message (STATUS "UTILS_ENABLE_SANITIZERS - ${UTILS_ENABLE_SANITIZERS}")
 
 # Configuring project output directories
 
@@ -85,6 +89,17 @@ if (WIN32)
     endif ()
     message (STATUS "UTILS_MSVC_STATIC_RUNTIME - ${UTILS_MSVC_STATIC_RUNTIME}")
 endif ()
+
+# Enable coverage
+
+if (UTILS_ENABLE_COVERAGE AND UNIX)
+    list (APPEND CMAKE_CXX_FLAGS "--coverage -g -O0")
+    find_package(Threads REQUIRED)
+endif ()
+
+if(UTILS_ENABLE_SANITIZERS)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g -fno-omit-frame-pointer -fsanitize=address -fsanitize=leak -fsanitize=undefined")
+endif()
 
 # Adding subdirectories to the project
 

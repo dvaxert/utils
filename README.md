@@ -1,4 +1,9 @@
-[![Build and Test Library](https://github.com/dvaxert/utils/actions/workflows/buildAndTest.yml/badge.svg?branch=master)](https://github.com/dvaxert/utils/actions/workflows/buildAndTest.yml)
+[![GitHub license](https://badgen.net/github/license/dvaxert/utils)](https://github.com/dvaxert/utils/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/dvaxert/utils.svg)](https://github.com/dvaxert/utils/releases/)
+[![Windows](https://github.com/dvaxert/utils/actions/workflows/windows.yml/badge.svg?branch=master)](https://github.com/dvaxert/utils/actions/workflows/windows.yml)
+[![Linux](https://github.com/dvaxert/utils/actions/workflows/linux.yml/badge.svg?branch=master)](https://github.com/dvaxert/utils/actions/workflows/linux.yml)
+[![MacOS](https://github.com/dvaxert/utils/actions/workflows/macos.yml/badge.svg?branch=master)](https://github.com/dvaxert/utils/actions/workflows/macos.yml)
+[![codecov](https://codecov.io/gh/dvaxert/utils/branch/develop/graph/badge.svg?token=ZFXIHQOBO7)](https://codecov.io/gh/dvaxert/utils)
 
 # Utils
 A subproject with different utilities used in the modules of the [wormhole](https://github.com/dvaxert/wormhole) project.
