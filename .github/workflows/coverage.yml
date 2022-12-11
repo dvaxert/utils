@@ -18,10 +18,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       
-      - name: Install programs
-        run: |
-          sudo apt install gcov
-
       - name: Coverage
         uses: codecov/codecov-action@v3
         with:
