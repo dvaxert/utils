@@ -54,10 +54,11 @@ jobs:
 
       - name: Generate reports
         run: |
-          gcovr --root ${{github.workspace}} --html --html-details --output coverage.html
+          gcovr --root ${{github.workspace}} --html --html-details --output ${{github.workspace}}/coverage.html
 
       - name: Send reports
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           gcov: true
+          files: ${{github.workspace}}/coverage.html
