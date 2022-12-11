@@ -1,4 +1,5 @@
 [![Build and Test Library](https://github.com/dvaxert/utils/actions/workflows/buildAndTest.yml/badge.svg?branch=master)](https://github.com/dvaxert/utils/actions/workflows/buildAndTest.yml)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdvaxert%2Futils.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdvaxert%2Futils?ref=badge_shield)
 
 # Utils
 A subproject with different utilities used in the modules of the [wormhole](https://github.com/dvaxert/wormhole) project.
@@ -72,3 +73,7 @@ target_link_libraries(<your_target>
         wh::utils
 )
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdvaxert%2Futils.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdvaxert%2Futils?ref=badge_large)
