@@ -18,6 +18,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       
+      - name: Install codecov
+        run: |
+        python3 -m pip install gcov
+
       - name: Coverage
         uses: codecov/codecov-action@v3
         with:
