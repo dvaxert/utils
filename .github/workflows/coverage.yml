@@ -20,7 +20,7 @@ jobs:
       
       - name: Install codecov
         run: |
-        python3 -m pip install gcov
+          python3 -m pip install gcov
 
       - name: Coverage
         uses: codecov/codecov-action@v3
