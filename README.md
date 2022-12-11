@@ -29,6 +29,8 @@ A subproject with different utilities used in the modules of the [wormhole](http
 * **UTILS_PEDANTIC** - Enable the display of additional warnings
 * **UTILS_WERROR** - Handle all compiler warnings with errors
 * **UTILS_MSVC_STATIC_RUNTIME** - Link static runtime libraries
+* **UTILS_ENABLE_COVERAGE** - Run coverage
+* **UTILS_ENABLE_SANITIZERS** - Run static analysis
 
 ## Typical building
 
