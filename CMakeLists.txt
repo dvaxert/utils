@@ -93,10 +93,11 @@ endif ()
 # Enable coverage
 
 if (UTILS_ENABLE_COVERAGE AND UNIX)
-  list (APPEND CMAKE_CXX_FLAGS "${CMAKE_CURRENT_SOURCE_DIR} --coverage -g -O0")
+    list (APPEND CMAKE_CXX_FLAGS "--coverage -g -O0")
+    find_package(Threads REQUIRED)
 endif ()
 
-if(BOOST_UT_ENABLE_SANITIZERS)
+if(UTILS_ENABLE_SANITIZERS)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g -fno-omit-frame-pointer -fsanitize=address -fsanitize=leak -fsanitize=undefined")
 endif()
 
