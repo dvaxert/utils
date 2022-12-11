@@ -92,8 +92,8 @@ endif ()
 
 # Enable coverage
 
-if (UTILS_ENABLE_COVERAGE)
-  set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage -g -O0")
+if (UTILS_ENABLE_COVERAGE AND UNIX)
+  list (APPEND CMAKE_CXX_FLAGS "${CMAKE_CURRENT_SOURCE_DIR} --coverage -g -O0")
 endif ()
 
 if(BOOST_UT_ENABLE_SANITIZERS)
