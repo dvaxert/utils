@@ -42,7 +42,7 @@ jobs:
           -DUTILS_GENERATE_DOCUMENTATION=OFF 
           -DUTILS_PEDANTIC=OFF 
           -DUTILS_WERROR=OFF 
-          -DUTILS_ENABLE_COVERAGE=OFF 
+          -DUTILS_ENABLE_COVERAGE=ON 
           -DCMAKE_TOOLCHAIN_FILE=${{github.workspace}}/vcpkg/scripts/buildsystems/vcpkg.cmake'
 
       - name: Build Debug
