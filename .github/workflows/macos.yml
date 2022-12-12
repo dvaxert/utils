@@ -1,22 +1,23 @@
-name: Build and Test Library
-on: 
+name: MacOS
+
+on:
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
+
 jobs:
   job:
+    runs-on: macos-latest
     strategy:
       matrix:
-        os: [ windows-latest, ubuntu-latest, macos-latest ]
         buildShared: [ 'ON', 'OFF' ]
-        include:
-          - os: windows-latest
-            generator: '"Visual Studio 17 2022" -A x64'
-          - os: ubuntu-latest
-            generator: '"Ninja"'
-          - os: macos-latest
-            generator: '"Ninja"'
 
-    runs-on: ${{matrix.os}}
+    name: MacOs buildShared=${{matrix.buildShared}}
 
     steps: 
       - name: Checkout
@@ -34,7 +35,7 @@ jobs:
           vcpkgJsonGlob: '**/vcpkg.json'
 
       - name: Configure CMake
-        run: 'cmake -S ${{github.workspace}} -B ${{github.workspace}}/build -G ${{matrix.generator}}
+        run: 'cmake -S ${{github.workspace}} -B ${{github.workspace}}/build -G "Ninja"
           -DUTILS_BUILD_SHARED_LIBS=${{matrix.buildShared}} 
           -DUTILS_BUILD_TESTING=ON 
           -DUTILS_INSTALL=OFF 
@@ -42,6 +43,7 @@ jobs:
           -DUTILS_GENERATE_DOCUMENTATION=OFF 
           -DUTILS_PEDANTIC=ON 
           -DUTILS_WERROR=ON 
+          -DUTILS_ENABLE_COVERAGE=OFF
           -DCMAKE_TOOLCHAIN_FILE=${{github.workspace}}/vcpkg/scripts/buildsystems/vcpkg.cmake'
 
       - name: Build Debug

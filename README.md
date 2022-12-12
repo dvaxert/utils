@@ -1,5 +1,11 @@
-[![Build and Test Library](https://github.com/dvaxert/utils/actions/workflows/buildAndTest.yml/badge.svg?branch=master)](https://github.com/dvaxert/utils/actions/workflows/buildAndTest.yml)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdvaxert%2Futils.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdvaxert%2Futils?ref=badge_shield)
+[![GitHub license](https://badgen.net/github/license/dvaxert/utils)](https://github.com/dvaxert/utils/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/dvaxert/utils.svg)](https://github.com/dvaxert/utils/releases/)
+[![codecov](https://codecov.io/gh/dvaxert/utils/branch/develop/graph/badge.svg?token=ZFXIHQOBO7)](https://codecov.io/gh/dvaxert/utils)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdvaxert%2Futils.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdvaxert%2Futils?ref=badge_shield)  
+[![Windows](https://github.com/dvaxert/utils/actions/workflows/windows.yml/badge.svg?branch=master)](https://github.com/dvaxert/utils/actions/workflows/windows.yml)
+[![Linux](https://github.com/dvaxert/utils/actions/workflows/linux.yml/badge.svg?branch=master)](https://github.com/dvaxert/utils/actions/workflows/linux.yml)
+[![MacOS](https://github.com/dvaxert/utils/actions/workflows/macos.yml/badge.svg?branch=master)](https://github.com/dvaxert/utils/actions/workflows/macos.yml)
+
 
 # Utils
 A subproject with different utilities used in the modules of the [wormhole](https://github.com/dvaxert/wormhole) project.
