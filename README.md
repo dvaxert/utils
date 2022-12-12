@@ -37,6 +37,7 @@ A subproject with different utilities used in the modules of the [wormhole](http
 In the project directory, call the commands:
 ```
 $ git clone https://github.com/dvaxert/utils
+$ cd ./utils 
 $ cmake -S . -B ./build
 $ cmake --build ./build --config Release
 ```
