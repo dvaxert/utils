@@ -8,7 +8,7 @@ using namespace std::chrono_literals;
 //------------------------------------------------------------------------------
 
 TEST(ConditionVariableTest, get_status) {
-  auto cv = wormholeutils::ConditionVariable();
+  auto cv = wormhole::utils::ConditionVariable();
   ASSERT_FALSE(cv.Get());
 
   cv.Notify();
@@ -24,7 +24,7 @@ TEST(ConditionVariableTest, get_status) {
 //------------------------------------------------------------------------------
 
 TEST(ConditionVariableTest, waiting_timeout) {
-  auto cv = wormholeutils::ConditionVariable();
+  auto cv = wormhole::utils::ConditionVariable();
   auto start = std::chrono::system_clock::now();
   cv.WaitFor(1000ms);
   auto end = std::chrono::system_clock::now();
@@ -35,7 +35,7 @@ TEST(ConditionVariableTest, waiting_timeout) {
 //------------------------------------------------------------------------------
 
 TEST(ConditionVariableTest, waiting_deadline) {
-  auto cv = wormholeutils::ConditionVariable();
+  auto cv = wormhole::utils::ConditionVariable();
   auto start = std::chrono::system_clock::now();
   cv.WaitUntil(start + 1000ms);
   auto end = std::chrono::system_clock::now();
@@ -46,7 +46,7 @@ TEST(ConditionVariableTest, waiting_deadline) {
 //------------------------------------------------------------------------------
 
 TEST(ConditionVariableTest, notify_with_timeout) {
-  auto cv = wormholeutils::ConditionVariable();
+  auto cv = wormhole::utils::ConditionVariable();
   auto start = std::chrono::system_clock::now();
   auto t = std::thread([&] {
     std::this_thread::sleep_for(300ms);
@@ -64,7 +64,7 @@ TEST(ConditionVariableTest, notify_with_timeout) {
 //------------------------------------------------------------------------------
 
 TEST(ConditionVariableTest, notify_with_deadline) {
-  auto cv = wormholeutils::ConditionVariable();
+  auto cv = wormhole::utils::ConditionVariable();
   auto start = std::chrono::system_clock::now();
   auto t = std::thread([&] {
     std::this_thread::sleep_for(300ms);
