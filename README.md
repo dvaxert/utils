@@ -30,12 +30,15 @@ A subproject with different utilities used in the modules of the [wormhole](http
 * **UTILS_PEDANTIC** - Enable the display of additional warnings
 * **UTILS_WERROR** - Handle all compiler warnings with errors
 * **UTILS_MSVC_STATIC_RUNTIME** - Link static runtime libraries
+* **UTILS_ENABLE_COVERAGE** - Run coverage
+* **UTILS_ENABLE_SANITIZERS** - Run static analysis
 
 ## Typical building
 
 In the project directory, call the commands:
 ```
 $ git clone https://github.com/dvaxert/utils
+$ cd ./utils 
 $ cmake -S . -B ./build
 $ cmake --build ./build --config Release
 ```
@@ -72,11 +75,11 @@ or pass the parameter when generating the project
 -Dutils_DIR=<install_prefix>/lib/cmake/utils
 ```
 
-Link to your application purpose **wh::utils** as follows:
+Link to your application purpose **Wormhole::utils** as follows:
 ```cmake
 target_link_libraries(<your_target>
     PRIVATE
-        wh::utils
+        Wormhole::utils
 )
 ```
 

@@ -5,7 +5,7 @@
 
 #include "wormhole/utils/logger/level.h"
 
-namespace wh {
+namespace wormhole {
 namespace utils {
 
 class ILogger {
@@ -19,10 +19,10 @@ class ILogger {
   virtual void Error(const std::string_view message) = 0;
   virtual void Fatal(const std::string_view message) = 0;
 
-  virtual void SetLevel(const wh::utils::LogLevel level) = 0;
+  virtual void SetLevel(const wormhole::utils::LogLevel level) = 0;
 };
 
 }  // namespace utils
-}  // namespace wh
+}  // namespace wormhole
 
 #endif  // UTILS_LIB_INCLUDE_UTILS_LOGGER_ILOGGER_H_

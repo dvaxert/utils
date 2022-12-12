@@ -8,7 +8,7 @@
 
 #include "wormhole/utils/traits.h"
 
-namespace wh {
+namespace wormhole {
 namespace utils {
 
 class Serializer final {
@@ -67,6 +67,6 @@ Serializer& operator&(Serializer& s, std::shared_ptr<T> value) {
 }
 
 }  // namespace utils
-}  // namespace wh
+}  // namespace wormhole
 
 #endif  // UTILS_LIB_INCLUDE_UTILS_SERIALIZE_SERIALIZER_H_

@@ -10,7 +10,7 @@
  *  DEFER_CALL(<function>, <arguments>);
  *  DEFER_CALL(<method>, <object>, <arguments>);
  */
-#define DEFER_CALL(...) wh::utils::DeferCall MAKE_DEFER_CALL_NAME()(__VA_ARGS__);
+#define DEFER_CALL(...) wormhole::utils::DeferCall MAKE_DEFER_CALL_NAME()(__VA_ARGS__);
 
 /**
  * @brief Macros for automatic generation of names for the DEFER_CALL macro
@@ -19,7 +19,7 @@
 #define CONCAT(a, b) CONCAT_INNER(a, b)
 #define CONCAT_INNER(a, b) a##b
 
-namespace wh {
+namespace wormhole {
 namespace utils {
 
 class DeferCall {
@@ -44,6 +44,6 @@ class DeferCall {
 };
 
 }  // namespace utils
-}  // namespace wh
+}  // namespace wormhole
 
 #endif  // UTILS_LIB_INCLUDE_UTILS_DEFER_CALL_H_

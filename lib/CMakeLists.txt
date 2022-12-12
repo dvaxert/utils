@@ -16,7 +16,7 @@ else ()
 endif ()
 
 add_library (${PROJECT_NAME} ${UTILS_LIBRARY_TYPE})
-add_library (wh::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
+add_library (Wormhole::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 # Describing the list of source files
 
@@ -105,7 +105,7 @@ if (UTILS_INSTALL AND NOT CMAKE_SKIP_INSTALL_RULES)
     # Use a namespace because CMake provides better diagnostics for namespaced imported targets.
     export (
         TARGETS ${PROJECT_NAME}
-        NAMESPACE wh::
+        NAMESPACE Wormhole::
         FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}-targets.cmake
     )
 
@@ -118,7 +118,7 @@ if (UTILS_INSTALL AND NOT CMAKE_SKIP_INSTALL_RULES)
     install (
         EXPORT ${PROJECT_NAME}-targets 
         DESTINATION ${UTILS_CMAKE_DIR}
-        NAMESPACE wh::
+        NAMESPACE Wormhole::
     )
     
     # $<TARGET_PDB_FILE:tgt> generates an error if the library is built with the /MT flag

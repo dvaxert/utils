@@ -35,7 +35,7 @@ Type GenerateRandomValue(size_t min = Type(), size_t max = ~Type()) {
 //------------------------------------------------------------------------------
 
 TEST(SerializerTest, serialize_uint8_t) {
-  auto serializer = wh::utils::Serializer{};
+  auto serializer = wormhole::utils::Serializer{};
   serializer& uint8_t(0x30);
 
   std::vector<uint8_t> check{0x30};
@@ -46,7 +46,7 @@ TEST(SerializerTest, serialize_uint8_t) {
 //------------------------------------------------------------------------------
 
 TEST(SerializerTest, serialize_many_uint8_t) {
-  auto serializer = wh::utils::Serializer{};
+  auto serializer = wormhole::utils::Serializer{};
 
   serializer& uint8_t(0x44) & uint8_t(0x33) & uint8_t(0x22) & uint8_t(0x11) & uint8_t(0x00);
 
@@ -58,7 +58,7 @@ TEST(SerializerTest, serialize_many_uint8_t) {
 //------------------------------------------------------------------------------
 
 TEST(SerializerTest, serialize_uint16_t) {
-  auto serializer = wh::utils::Serializer{};
+  auto serializer = wormhole::utils::Serializer{};
 
   serializer& uint16_t(0x3018);
 
@@ -70,7 +70,7 @@ TEST(SerializerTest, serialize_uint16_t) {
 //------------------------------------------------------------------------------
 
 TEST(SerializerTest, serialize_many_uint16_t) {
-  auto serializer = wh::utils::Serializer{};
+  auto serializer = wormhole::utils::Serializer{};
 
   serializer& uint16_t(0x3018) & uint16_t(0x1337) & uint16_t(0x1234) & uint16_t(0x0101);
 
@@ -82,7 +82,7 @@ TEST(SerializerTest, serialize_many_uint16_t) {
 //------------------------------------------------------------------------------
 
 TEST(SerializerTest, serialize_uint32_t) {
-  auto serializer = wh::utils::Serializer{};
+  auto serializer = wormhole::utils::Serializer{};
 
   serializer& uint32_t(0x44332211);
 
@@ -94,7 +94,7 @@ TEST(SerializerTest, serialize_uint32_t) {
 //------------------------------------------------------------------------------
 
 TEST(SerializerTest, serialize_many_uint32_t) {
-  auto serializer = wh::utils::Serializer{};
+  auto serializer = wormhole::utils::Serializer{};
 
   serializer& uint32_t(0x44332211) & uint32_t(0x55667788);
 
@@ -106,7 +106,7 @@ TEST(SerializerTest, serialize_many_uint32_t) {
 //------------------------------------------------------------------------------
 
 TEST(SerializerTest, serialize_uint64_t) {
-  auto serializer = wh::utils::Serializer{};
+  auto serializer = wormhole::utils::Serializer{};
 
   serializer& uint64_t(0x8877665544332211);
 
@@ -118,7 +118,7 @@ TEST(SerializerTest, serialize_uint64_t) {
 //------------------------------------------------------------------------------
 
 TEST(SerializerTest, serialize_many_uint64_t) {
-  auto serializer = wh::utils::Serializer{};
+  auto serializer = wormhole::utils::Serializer{};
 
   serializer& uint64_t(0x8877665544332211) & uint64_t(0x1532970372035836);
 
@@ -131,7 +131,7 @@ TEST(SerializerTest, serialize_many_uint64_t) {
 //------------------------------------------------------------------------------
 
 TEST(SerializerTest, serialize_mix_uint8_t_uint16_t) {
-  auto serializer = wh::utils::Serializer{};
+  auto serializer = wormhole::utils::Serializer{};
 
   serializer& uint8_t(0x03) & uint16_t(0x15F9) & uint8_t(0x76) & uint16_t(0xA07E) & uint16_t(0xF310);
 
@@ -143,7 +143,7 @@ TEST(SerializerTest, serialize_mix_uint8_t_uint16_t) {
 //------------------------------------------------------------------------------
 
 TEST(SerializerTest, serialize_mix_uint8_t_uint32_t) {
-  auto serializer = wh::utils::Serializer{};
+  auto serializer = wormhole::utils::Serializer{};
 
   serializer& uint32_t(0xB4A367F2) & uint8_t(0x03) & uint8_t(0x76) & uint32_t(0x15F9A07E);
 
@@ -155,7 +155,7 @@ TEST(SerializerTest, serialize_mix_uint8_t_uint32_t) {
 //------------------------------------------------------------------------------
 
 TEST(SerializerTest, serialize_mix_uint8_t_uint64_t) {
-  auto serializer = wh::utils::Serializer{};
+  auto serializer = wormhole::utils::Serializer{};
 
   serializer& uint8_t(0x16) & uint64_t(0xB4A367F20D610A81) & uint8_t(0xFF);
 
@@ -167,7 +167,7 @@ TEST(SerializerTest, serialize_mix_uint8_t_uint64_t) {
 //------------------------------------------------------------------------------
 
 TEST(SerializerTest, serialize_mix_uint16_t_uint32_t) {
-  auto serializer = wh::utils::Serializer{};
+  auto serializer = wormhole::utils::Serializer{};
 
   serializer& uint16_t(0xF2C0) & uint16_t(0xA042) & uint32_t(0x63A9FE70) & uint32_t(0x35172EEA);
 
@@ -179,7 +179,7 @@ TEST(SerializerTest, serialize_mix_uint16_t_uint32_t) {
 //------------------------------------------------------------------------------
 
 TEST(SerializerTest, serialize_mix_uint16_t_uint64_t) {
-  auto serializer = wh::utils::Serializer{};
+  auto serializer = wormhole::utils::Serializer{};
 
   serializer& uint16_t(0x2FA0) & uint64_t(0x6313E72EA5A9FE70) & uint16_t(0x42C0);
 
@@ -191,7 +191,7 @@ TEST(SerializerTest, serialize_mix_uint16_t_uint64_t) {
 //------------------------------------------------------------------------------
 
 TEST(SerializerTest, serialize_mix_uint32_t_uint64_t) {
-  auto serializer = wh::utils::Serializer{};
+  auto serializer = wormhole::utils::Serializer{};
 
   serializer& uint64_t(0x49A73FE860C6D396) & uint32_t(0x92AE8590) & uint32_t(0xFEDCBA98);
 
@@ -204,7 +204,7 @@ TEST(SerializerTest, serialize_mix_uint32_t_uint64_t) {
 //------------------------------------------------------------------------------
 
 TEST(SerializerTest, serialize_mix_all) {
-  auto serializer = wh::utils::Serializer{};
+  auto serializer = wormhole::utils::Serializer{};
 
   serializer& uint16_t(0xF7E5) & uint64_t(0x1133557799AACCEE) & uint8_t(0xFF) & uint32_t(0x22446688);
 
@@ -216,7 +216,7 @@ TEST(SerializerTest, serialize_mix_all) {
 //------------------------------------------------------------------------------
 
 TEST(SerializerTest, serialize_align_1_to_8) {
-  auto serializer = wh::utils::Serializer{};
+  auto serializer = wormhole::utils::Serializer{};
 
   serializer& uint8_t(0xFF);
   serializer.AlignData(8);
@@ -232,7 +232,7 @@ TEST(SerializerTest, serialize_align_1_to_8) {
 //------------------------------------------------------------------------------
 
 TEST(SerializerTest, serialize_align_4_to_32) {
-  auto serializer = wh::utils::Serializer{};
+  auto serializer = wormhole::utils::Serializer{};
 
   serializer& uint32_t(0xFFFFFFFF);
   serializer.AlignData(32);
@@ -248,7 +248,7 @@ TEST(SerializerTest, serialize_align_4_to_32) {
 //------------------------------------------------------------------------------
 
 TEST(SerializerTest, serialize_align_4_to_4) {
-  auto serializer = wh::utils::Serializer{};
+  auto serializer = wormhole::utils::Serializer{};
 
   serializer& uint32_t(0xFFFFFFFF);
   serializer.AlignData(4);
@@ -263,7 +263,7 @@ TEST(SerializerTest, serialize_align_4_to_4) {
 //------------------------------------------------------------------------------
 
 TEST(SerializerTest, serialize_align_5_to_3) {
-  auto serializer = wh::utils::Serializer{};
+  auto serializer = wormhole::utils::Serializer{};
 
   serializer& uint32_t(0xFFFFFFFF) & uint8_t(0xFF);
   serializer.AlignData(3);
@@ -280,7 +280,7 @@ TEST(SerializerTest, serialize_align_5_to_3) {
 
 TEST(SerializerTest, serialize_100_random_values_uint8_t) {
   for (auto i = 0; i < 100; ++i) {
-    auto serializer = wh::utils::Serializer{};
+    auto serializer = wormhole::utils::Serializer{};
     auto value = GenerateRandomValue<uint8_t>();
 
     serializer& value;
@@ -294,7 +294,7 @@ TEST(SerializerTest, serialize_100_random_values_uint8_t) {
 
 TEST(SerializerTest, serialize_100_random_values_uint16_t) {
   for (auto i = 0; i < 100; ++i) {
-    auto serializer = wh::utils::Serializer{};
+    auto serializer = wormhole::utils::Serializer{};
     auto value = GenerateRandomValue<uint16_t>();
 
     serializer& value;
@@ -308,7 +308,7 @@ TEST(SerializerTest, serialize_100_random_values_uint16_t) {
 
 TEST(SerializerTest, serialize_100_random_values_uint32_t) {
   for (auto i = 0; i < 100; ++i) {
-    auto serializer = wh::utils::Serializer{};
+    auto serializer = wormhole::utils::Serializer{};
     auto value = GenerateRandomValue<uint32_t>();
 
     serializer& value;
@@ -322,7 +322,7 @@ TEST(SerializerTest, serialize_100_random_values_uint32_t) {
 
 TEST(SerializerTest, serialize_100_random_values_uint64_t) {
   for (auto i = 0; i < 100; ++i) {
-    auto serializer = wh::utils::Serializer{};
+    auto serializer = wormhole::utils::Serializer{};
     auto value = GenerateRandomValue<uint64_t>();
 
     serializer& value;
@@ -336,7 +336,7 @@ TEST(SerializerTest, serialize_100_random_values_uint64_t) {
 
 TEST(SerializerTest, serialize_100_random_align_uint8_t) {
   for (auto i = 0; i < 100; ++i) {
-    auto serializer = wh::utils::Serializer{};
+    auto serializer = wormhole::utils::Serializer{};
     auto value = GenerateRandomValue<uint8_t>();
     auto align = GenerateRandomValue<size_t>(1, 255);
 
@@ -357,7 +357,7 @@ TEST(SerializerTest, serialize_100_random_align_uint8_t) {
 
 TEST(SerializerTest, serialize_100_random_align_uint16_t) {
   for (auto i = 0; i < 100; ++i) {
-    auto serializer = wh::utils::Serializer{};
+    auto serializer = wormhole::utils::Serializer{};
     auto value = GenerateRandomValue<uint16_t>();
     auto align = GenerateRandomValue<size_t>(1, 255);
 
@@ -378,7 +378,7 @@ TEST(SerializerTest, serialize_100_random_align_uint16_t) {
 
 TEST(SerializerTest, serialize_100_random_align_uint32_t) {
   for (auto i = 0; i < 100; ++i) {
-    auto serializer = wh::utils::Serializer{};
+    auto serializer = wormhole::utils::Serializer{};
     auto value = GenerateRandomValue<uint32_t>();
     auto align = GenerateRandomValue<size_t>(1, 255);
 
@@ -399,7 +399,7 @@ TEST(SerializerTest, serialize_100_random_align_uint32_t) {
 
 TEST(SerializerTest, serialize_100_random_align_uint64_t) {
   for (auto i = 0; i < 100; ++i) {
-    auto serializer = wh::utils::Serializer{};
+    auto serializer = wormhole::utils::Serializer{};
     auto value = GenerateRandomValue<uint64_t>();
     auto align = GenerateRandomValue<size_t>(1, 255);
 

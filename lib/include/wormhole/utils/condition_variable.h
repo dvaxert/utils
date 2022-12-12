@@ -7,7 +7,7 @@
 #include <cstdint>
 #include <mutex>
 
-namespace wh {
+namespace wormhole {
 namespace utils {
 
 class ConditionVariable {
@@ -31,6 +31,6 @@ class ConditionVariable {
 };
 
 }  // namespace utils
-}  // namespace wh
+}  // namespace wormhole
 
 #endif  // UTILS_LIB_INCLUDE_UTILS_CONDITION_VARIABLE_H_

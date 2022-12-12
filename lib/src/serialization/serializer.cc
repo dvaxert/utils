@@ -2,7 +2,7 @@
 
 #include "wormhole/utils/serialization/serializer.h"
 
-namespace wh {
+namespace wormhole {
 namespace utils {
 
 std::vector<uint8_t> Serializer::Data() const { return {data_.begin(), data_.begin() + size_}; }
@@ -40,4 +40,4 @@ void Serializer::CheckSize(size_t s) const {
 }
 
 }  // namespace utils
-}  // namespace wh
+}  // namespace wormhole

@@ -7,7 +7,7 @@ find_package(GTest REQUIRED)
 
 add_executable (defer_call_test main.cc defer_call_test.cc)
 
-target_link_libraries (defer_call_test wh::utils GTest::GTest GTest::Main)
+target_link_libraries (defer_call_test Wormhole::utils GTest::GTest GTest::Main)
 
 add_test (
     NAME defer_call_test

@@ -6,7 +6,7 @@
 
 #include <type_traits>
 
-namespace wh {
+namespace wormhole {
 namespace utils {
 
 template <class T, size_t Size, size_t Alignment>
@@ -50,6 +50,6 @@ class FastPimpl {
 };
 
 }  // namespace utils
-}  // namespace wh
+}  // namespace wormhole
 
 #endif  // UTILS_LIB_INCLUDE_UTILS_FAST_PIMPL_H_
