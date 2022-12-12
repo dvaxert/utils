@@ -7,7 +7,7 @@ find_package(GTest REQUIRED)
 
 add_executable (serializer_test main.cc serializer_test.cc)
 
-target_link_libraries (serializer_test wh::utils GTest::GTest GTest::Main)
+target_link_libraries (serializer_test wormholeutils GTest::GTest GTest::Main)
 
 add_test (
     NAME serializer_test

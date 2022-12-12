@@ -2,7 +2,7 @@
 
 #include "wormhole/utils/condition_variable.h"
 
-namespace wh {
+namespace wormhole {
 namespace utils {
 
 bool ConditionVariable::Get() const { return bool_.load(); }
@@ -39,4 +39,4 @@ bool ConditionVariable::WaitUntil(const std::chrono::system_clock::time_point& d
 }
 
 }  // namespace utils
-}  // namespace wh
+}  // namespace wormhole

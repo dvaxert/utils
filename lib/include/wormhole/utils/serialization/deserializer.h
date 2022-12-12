@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 
-namespace wh {
+namespace wormhole {
 namespace utils {
 
 class Deserializer final {
@@ -57,6 +57,6 @@ class Deserializer final {
 };
 
 }  // namespace utils
-}  // namespace wh
+}  // namespace wormhole
 
 #endif  // UTILS_LIB_INCLUDE_UTILS_SERIALIZE_DESERIALIZER_H_

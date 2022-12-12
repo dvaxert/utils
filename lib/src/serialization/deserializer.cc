@@ -2,7 +2,7 @@
 
 #include "wormhole/utils/serialization/deserializer.h"
 
-namespace wh {
+namespace wormhole {
 namespace utils {
 
 Deserializer::Deserializer(std::vector<uint8_t> raw_data) : data_(std::move(raw_data)), pos_(0) {}
@@ -53,4 +53,4 @@ void Deserializer::CheckSize(size_t s) const {
 void Deserializer::UpdatePos(size_t s) { pos_ += s; }
 
 }  // namespace utils
-}  // namespace wh
+}  // namespace wormhole

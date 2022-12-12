@@ -3,7 +3,7 @@
 
 #include "wormhole/utils/logger/spdlog_logger.h"
 
-namespace wh {
+namespace wormhole {
 namespace utils {
 
 spdlog::level::level_enum ToSpdlogLevel(const LogLevel level) {
@@ -82,4 +82,4 @@ void Logger::Fatal(const std::string_view message) { pimpl_->Log(LogLevel::Fatal
 void Logger::SetLevel(const LogLevel level) { pimpl_->SetLevel(level); }
 
 }  // namespace utils
-}  // namespace wh
+}  // namespace wormhole

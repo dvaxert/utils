@@ -75,11 +75,11 @@ or pass the parameter when generating the project
 -Dutils_DIR=<install_prefix>/lib/cmake/utils
 ```
 
-Link to your application purpose **wh::utils** as follows:
+Link to your application purpose **Wormhole::utils** as follows:
 ```cmake
 target_link_libraries(<your_target>
     PRIVATE
-        wh::utils
+        Wormhole::utils
 )
 ```
 

@@ -3,7 +3,7 @@
 
 #include <type_traits>
 
-namespace wh {
+namespace wormhole {
 namespace utils {
 
 template <typename TEnum>
@@ -12,6 +12,6 @@ constexpr auto to_integral(TEnum value) {
 }
 
 }  // namespace utils
-}  // namespace wh
+}  // namespace wormhole
 
 #endif  // UTILS_LIB_INCLUDE_UTILS_TO_INTEGRAL_H_

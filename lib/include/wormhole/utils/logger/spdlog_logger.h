@@ -9,7 +9,7 @@
 #include "wormhole/utils/logger/ilogger.h"
 #include "wormhole/utils/logger/level.h"
 
-namespace wh {
+namespace wormhole {
 namespace utils {
 
 class Logger : public ILogger {
@@ -32,6 +32,6 @@ class Logger : public ILogger {
 };
 
 }  // namespace utils
-}  // namespace wh
+}  // namespace wormhole
 
 #endif  // UTILS_LIB_INCLUDE_UTILS_LOGGER_LOGGER_H_
