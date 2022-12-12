@@ -54,7 +54,7 @@ jobs:
 
       - name: Generate reports
         run: |
-          gcovr --root ${{github.workspace}} --html --html-details --output ${{github.workspace}}/coverage.html
+          gcovr --root ${{github.workspace}}/lib --html --html-details --output ${{github.workspace}}/coverage.html
           echo $?
 
       - name: Send reports
