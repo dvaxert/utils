@@ -1,6 +1,8 @@
 ﻿#ifndef UTILS_LIB_INCLUDE_UTILS_LOG_H_
 #define UTILS_LIB_INCLUDE_UTILS_LOG_H_
 
+#include <fmt/format.h>
+
 #include <boost/preprocessor.hpp>
 #include <memory>
 #include <sstream>
