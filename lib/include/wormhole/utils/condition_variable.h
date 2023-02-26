@@ -1,4 +1,4 @@
-#ifndef UTILS_LIB_INCLUDE_UTILS_CONDITION_VARIABLE_H_
+﻿#ifndef UTILS_LIB_INCLUDE_UTILS_CONDITION_VARIABLE_H_
 #define UTILS_LIB_INCLUDE_UTILS_CONDITION_VARIABLE_H_
 
 #include <atomic>
@@ -19,6 +19,7 @@ class ConditionVariable {
   void Notify();
   void Reset();
 
+  bool Wait();
   bool WaitFor(const std::chrono::milliseconds& timeout);
   bool WaitUntil(const std::chrono::system_clock::time_point& deadline);
 

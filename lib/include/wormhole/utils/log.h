@@ -1,4 +1,4 @@
-#ifndef UTILS_LIB_INCLUDE_UTILS_LOG_H_
+﻿#ifndef UTILS_LIB_INCLUDE_UTILS_LOG_H_
 #define UTILS_LIB_INCLUDE_UTILS_LOG_H_
 
 #include <boost/preprocessor.hpp>
@@ -40,10 +40,9 @@
  * @brief Message about entering and exiting a function with information about
  *        the arguments passed at the call
  */
-#define TRACE_LOG_P(...)                                                          \
-  wormhole::utils::LoggerSingleton()->Trace("enter "  GET_FUNCTION_NAME() "()")); \
-  LOG_PARAMS(__VA_ARGS__)                                                         \
-  DEFER_CALL(&wormhole::utils::ILogger::Trace, wormhole::utils::LoggerSingleton(), "exit " GET_FUNCTION_NAME() "()");
+#define TRACE_LOG_P(...) \
+  TRACE_LOG()            \
+  LOG_PARAMS(__VA_ARGS__)
 
 #define GET_FUNCTION_NAME() __func__
 
@@ -53,7 +52,7 @@
  * @warning The passed parameters must have the << operator to work with std
  *          streams
  */
-#define PRINT_PARAM(r, data, elem) data << "\t" #elem " = " << elem << "\n";
+#define PRINT_PARAM(r, data, elem) data << fmt::format("\t{} = {}\n", #elem, elem);
 #define LOG_PARAMS(...)                                                              \
   {                                                                                  \
     std::ostringstream tmp{};                                                        \

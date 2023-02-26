@@ -1,4 +1,4 @@
-#include <functional>
+﻿#include <functional>
 
 #include "wormhole/utils/condition_variable.h"
 
@@ -21,6 +21,14 @@ void ConditionVariable::Notify() {
 //------------------------------------------------------------------------------
 
 void ConditionVariable::Reset() { bool_.store(false); }
+
+//------------------------------------------------------------------------------
+
+bool ConditionVariable::Wait() {
+  auto lock = std::unique_lock(mutex_);
+  cv_.wait(lock, std::bind(&ConditionVariable::Get, this));
+  return Get();
+}
 
 //------------------------------------------------------------------------------
 
