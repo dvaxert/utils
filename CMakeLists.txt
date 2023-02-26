@@ -3,7 +3,7 @@ project (utils VERSION 0.1.0 LANGUAGES CXX)
 
 # Determine if utils is built as a subproject (using add_subdirectory) or if it is the master project.
 
-if (NOT DEFINED NETEWORK_MASTER_PROJECT)
+if (NOT DEFINED UTILS_MASTER_PROJECT)
   set (UTILS_MASTER_PROJECT OFF)
 
   if (CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
@@ -22,8 +22,8 @@ include(CMakeDependentOption)
 
 # Options available for project customization
 
-cmake_dependent_option (UTILS_BUILD_SHARED_LIBS "Build the project as a dynamic library" "${BUILD_SHARED_LIBS}" "UTILS_MASTER_PROJECT" ${UTILS_MASTER_PROJECT})
-cmake_dependent_option (UTILS_BUILD_TESTING "Build tests for the project" "${BUILD_TESTING}" "UTILS_MASTER_PROJECT" ${UTILS_MASTER_PROJECT})
+cmake_dependent_option (UTILS_BUILD_SHARED_LIBS "Build the project as a dynamic library" ON "BUILD_SHARED_LIBS" ${UTILS_MASTER_PROJECT})
+cmake_dependent_option (UTILS_BUILD_TESTING "Build tests for the project" ON "BUILD_TESTING" ${UTILS_MASTER_PROJECT})
 
 option (UTILS_INSTALL "Generate a target for project installation" ON)
 option (UTILS_BUILD_EXAMPLE "Build examples for a project" OFF)
@@ -34,6 +34,7 @@ option (UTILS_MSVC_STATIC_RUNTIME "Link static runtime libraries" OFF)
 option (UTILS_ENABLE_COVERAGE "Run coverage" OFF)
 option (UTILS_ENABLE_SANITIZERS "Run static analysis" OFF)
 
+message (STATUS "UTILS_MASTER_PROJECT - ${UTILS_MASTER_PROJECT}")
 message (STATUS "UTILS_BUILD_SHARED_LIBS - ${UTILS_BUILD_SHARED_LIBS}")
 message (STATUS "UTILS_BUILD_TESTING - ${UTILS_BUILD_TESTING}")
 message (STATUS "UTILS_INSTALL - ${UTILS_INSTALL}")
