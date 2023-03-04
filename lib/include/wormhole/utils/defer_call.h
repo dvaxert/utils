@@ -1,5 +1,5 @@
-#ifndef UTILS_LIB_INCLUDE_UTILS_DEFER_CALL_H_
-#define UTILS_LIB_INCLUDE_UTILS_DEFER_CALL_H_
+﻿#ifndef UTILS_LIB_INCLUDE_WORMHOLE_UTILS_DEFER_CALL_H_
+#define UTILS_LIB_INCLUDE_WORMHOLE_UTILS_DEFER_CALL_H_
 
 #include <functional>
 
@@ -46,4 +46,4 @@ class DeferCall {
 }  // namespace utils
 }  // namespace wormhole
 
-#endif  // UTILS_LIB_INCLUDE_UTILS_DEFER_CALL_H_
+#endif  // UTILS_LIB_INCLUDE_WORMHOLE_UTILS_DEFER_CALL_H_

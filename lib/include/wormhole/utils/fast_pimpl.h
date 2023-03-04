@@ -1,8 +1,8 @@
-// FastPimpl implementation by Yandex Taxi
+﻿// FastPimpl implementation by Yandex Taxi
 // taken from -> https://www.youtube.com/watch?v=mkPTreWiglk
 
-#ifndef UTILS_LIB_INCLUDE_UTILS_FAST_PIMPL_H_
-#define UTILS_LIB_INCLUDE_UTILS_FAST_PIMPL_H_
+#ifndef UTILS_LIB_INCLUDE_WORMHOLE_UTILS_FAST_PIMPL_H_
+#define UTILS_LIB_INCLUDE_WORMHOLE_UTILS_FAST_PIMPL_H_
 
 #include <type_traits>
 
@@ -52,4 +52,4 @@ class FastPimpl {
 }  // namespace utils
 }  // namespace wormhole
 
-#endif  // UTILS_LIB_INCLUDE_UTILS_FAST_PIMPL_H_
+#endif  // UTILS_LIB_INCLUDE_WORMHOLE_UTILS_FAST_PIMPL_H_

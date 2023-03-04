@@ -1,5 +1,5 @@
-﻿#ifndef UTILS_LIB_INCLUDE_UTILS_LOG_H_
-#define UTILS_LIB_INCLUDE_UTILS_LOG_H_
+﻿#ifndef UTILS_LIB_INCLUDE_WORMHOLE_UTILS_LOG_H_
+#define UTILS_LIB_INCLUDE_WORMHOLE_UTILS_LOG_H_
 
 #include <fmt/format.h>
 
@@ -92,4 +92,4 @@ std::shared_ptr<wormhole::utils::ILogger> LoggerSingleton();
 
 #endif  // UTILS_DISABLE_LOG
 
-#endif  // UTILS_LIB_INCLUDE_UTILS_LOG_H_
+#endif  // UTILS_LIB_INCLUDE_WORMHOLE_UTILS_LOG_H_

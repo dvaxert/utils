@@ -1,5 +1,5 @@
-#ifndef UTILS_LIB_INCLUDE_UTILS_TO_INTEGRAL_H_
-#define UTILS_LIB_INCLUDE_UTILS_TO_INTEGRAL_H_
+﻿#ifndef UTILS_LIB_INCLUDE_WORMHOLE_UTILS_TO_INTEGRAL_H_
+#define UTILS_LIB_INCLUDE_WORMHOLE_UTILS_TO_INTEGRAL_H_
 
 #include <type_traits>
 
@@ -14,4 +14,4 @@ constexpr auto to_integral(TEnum value) {
 }  // namespace utils
 }  // namespace wormhole
 
-#endif  // UTILS_LIB_INCLUDE_UTILS_TO_INTEGRAL_H_
+#endif  // UTILS_LIB_INCLUDE_WORMHOLE_UTILS_TO_INTEGRAL_H_

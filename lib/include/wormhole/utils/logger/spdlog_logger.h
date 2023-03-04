@@ -1,5 +1,5 @@
-#ifndef UTILS_LIB_INCLUDE_UTILS_LOGGER_LOGGER_H_
-#define UTILS_LIB_INCLUDE_UTILS_LOGGER_LOGGER_H_
+﻿#ifndef UTILS_LIB_INCLUDE_WORMHOLE_UTILS_LOGGER_LOGGER_H_
+#define UTILS_LIB_INCLUDE_WORMHOLE_UTILS_LOGGER_LOGGER_H_
 
 #include <fmt/format.h>
 
@@ -34,4 +34,4 @@ class Logger : public ILogger {
 }  // namespace utils
 }  // namespace wormhole
 
-#endif  // UTILS_LIB_INCLUDE_UTILS_LOGGER_LOGGER_H_
+#endif  // UTILS_LIB_INCLUDE_WORMHOLE_UTILS_LOGGER_LOGGER_H_

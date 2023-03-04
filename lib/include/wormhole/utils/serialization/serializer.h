@@ -1,5 +1,5 @@
-#ifndef UTILS_LIB_INCLUDE_UTILS_SERIALIZE_SERIALIZER_H_
-#define UTILS_LIB_INCLUDE_UTILS_SERIALIZE_SERIALIZER_H_
+﻿#ifndef UTILS_LIB_INCLUDE_WORMHOLE_UTILS_SERIALIZE_SERIALIZER_H_
+#define UTILS_LIB_INCLUDE_WORMHOLE_UTILS_SERIALIZE_SERIALIZER_H_
 
 #include <array>
 #include <boost/endian/conversion.hpp>
@@ -69,4 +69,4 @@ Serializer& operator&(Serializer& s, std::shared_ptr<T> value) {
 }  // namespace utils
 }  // namespace wormhole
 
-#endif  // UTILS_LIB_INCLUDE_UTILS_SERIALIZE_SERIALIZER_H_
+#endif  // UTILS_LIB_INCLUDE_WORMHOLE_UTILS_SERIALIZE_SERIALIZER_H_
