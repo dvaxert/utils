@@ -18,8 +18,6 @@ endif ()
 add_library (${PROJECT_NAME} ${UTILS_LIBRARY_TYPE})
 add_library (Wormhole::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
-# Describing the list of source files
-
 NestingFileSearch (UTILS_HEADERS
     RECURSIVE
     EXTENSIONS ".h"
@@ -40,7 +38,7 @@ target_sources (${PROJECT_NAME}
 )
 
 target_include_directories (${PROJECT_NAME}
-    PUBLIC 
+    PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>
 )
@@ -70,9 +68,9 @@ if (UTILS_INSTALL AND NOT CMAKE_SKIP_INSTALL_RULES)
     write_basic_package_version_file (
         ${VERSION_CONFIG}
         VERSION ${UTILS_VERSION}
-        COMPATIBILITY AnyNewerVersion
+        COMPATIBILITY ExactVersion
     )
-    
+
     configure_file (
         "${PROJECT_SOURCE_DIR}/cmake/utils.pc.in"
         "${UTILS_PKGCONFIG_DIR}"
@@ -87,7 +85,7 @@ if (UTILS_INSTALL AND NOT CMAKE_SKIP_INSTALL_RULES)
 
     # Install the library
     install (
-        TARGETS ${PROJECT_NAME} 
+        TARGETS ${PROJECT_NAME}
         EXPORT ${UTILS_TARGETS_EXPORT_NAME}
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
         LIBRARY DESTINATION ${CMAKE_INSTALL_BINDIR}
@@ -116,11 +114,11 @@ if (UTILS_INSTALL AND NOT CMAKE_SKIP_INSTALL_RULES)
     )
 
     install (
-        EXPORT ${PROJECT_NAME}-targets 
+        EXPORT ${PROJECT_NAME}-targets
         DESTINATION ${UTILS_CMAKE_DIR}
         NAMESPACE Wormhole::
     )
-    
+
     # $<TARGET_PDB_FILE:tgt> generates an error if the library is built with the /MT flag
     # so the path to the pdb file is created from the available variables
     install (

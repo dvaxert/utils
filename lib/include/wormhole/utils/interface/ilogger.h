@@ -1,9 +1,9 @@
-﻿#ifndef UTILS_LIB_INCLUDE_WORMHOLE_UTILS_LOGGER_ILOGGER_H_
-#define UTILS_LIB_INCLUDE_WORMHOLE_UTILS_LOGGER_ILOGGER_H_
+﻿#ifndef UTILS_LIB_INCLUDE_WORMHOLE_UTILS_INTERFACE_ILOGGER_H_
+#define UTILS_LIB_INCLUDE_WORMHOLE_UTILS_INTERFACE_ILOGGER_H_
 
 #include <string_view>
 
-#include "wormhole/utils/logger/level.h"
+#include "wormhole/utils/enums/log_level.h"
 
 namespace wormhole {
 namespace utils {
@@ -19,10 +19,10 @@ class ILogger {
   virtual void Error(const std::string_view message) = 0;
   virtual void Fatal(const std::string_view message) = 0;
 
-  virtual void SetLevel(const wormhole::utils::LogLevel level) = 0;
+  virtual void SetLevel(const LogLevel level) = 0;
 };
 
 }  // namespace utils
 }  // namespace wormhole
 
-#endif  // UTILS_LIB_INCLUDE_WORMHOLE_UTILS_LOGGER_ILOGGER_H_
+#endif  // UTILS_LIB_INCLUDE_WORMHOLE_UTILS_INTERFACE_ILOGGER_H_
